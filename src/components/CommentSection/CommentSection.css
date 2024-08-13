@@ -1,0 +1,125 @@
+.comment-section {
+  margin-top: 2rem;
+  padding: 0 var(--space-standard);
+}
+
+.comment-section__comment {
+  background-color: var(--background-color-comment);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space-standard);
+  padding: var(--space-standard);
+}
+
+.comment-section__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-standard);
+  margin-bottom: var(--space-standard);
+}
+
+.comment-section__avatar {
+  width: 2em;
+  height: 2em;
+}
+
+.comment-section__username {
+  font-weight: 700;
+  color: var(--text-color-heading);
+}
+
+.comment-section__created-at {
+  color: var(--text-color-body);
+}
+
+.comment-section__content {
+  margin-bottom: var(--space-standard);
+  color: var(--text-color-body);
+}
+
+.comment-section__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-section__score-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color-score);
+  border-radius: var(--border-radius);
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.comment-section__score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--action-color-primary);
+  padding: 0.5rem;
+  font-weight: 700;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+}
+
+.comment-section__score-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.comment-section__reply-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--action-color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  .comment-section {
+    max-width: 900px;
+    margin: 2rem auto;
+  }
+
+  .comment-section__comment {
+    display: grid;
+    grid-template-areas:
+      "score header reply"
+      "score content content";
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr;
+    gap: var(--space-standard);
+  }
+
+  .comment-section__header {
+    grid-area: header;
+    margin-bottom: 0;
+  }
+
+  .comment-section__content {
+    grid-area: content;
+    margin-bottom: 0;
+  }
+
+  .comment-section__score {
+    grid-area: score;
+    align-self: center;
+    height: auto;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .comment-section__footer {
+    display: contents;
+  }
+
+  .comment-section__reply-btn {
+    grid-area: reply;
+    align-self: center;
+  }
+}

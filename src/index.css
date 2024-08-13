@@ -1,0 +1,49 @@
+:root {
+  /* Typography */
+  --font-size: 16px;
+  --font-family: "Rubik", sans-serif;
+
+  /* Color Palette */
+  --color-primary: hsl(238, 40%, 52%);
+  --color-primary-light: hsl(239, 57%, 85%);
+  --color-secondary: hsl(358, 79%, 66%);
+  --color-secondary-light: hsl(357, 100%, 86%);
+  --color-neutral-dark: hsl(212, 24%, 26%);
+  --color-neutral: hsl(211, 10%, 45%);
+  --color-neutral-light: hsl(223, 19%, 93%);
+  --color-neutral-very-light: hsl(228, 33%, 97%);
+  --color-white: hsl(0, 0%, 100%);
+
+  /* Functional Colors */
+  --text-color-body: var(--color-neutral);
+  --text-color-heading: var(--color-neutral-dark);
+  --background-color-main: var(--color-neutral-very-light);
+  --background-color-comment: var(--color-white);
+  --background-color-score: var(--color-neutral-very-light);
+  --action-color-primary: var(--color-primary);
+
+  /* Other Variables */
+  --space-standard: 1rem;
+  --border-radius: 8px;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: var(--background-color-main);
+  color: var(--color-general-body-text);
+}
