@@ -6,6 +6,8 @@ import "./CommentSection.css";
 import amyrobsonWebp from "../../assets/avatars/image-amyrobson.webp";
 import maxblagunWebp from "../../assets/avatars/image-maxblagun.webp";
 import replyIcon from "../../assets/icon-reply.svg";
+import minusIcon from "../../assets/icon-minus.svg";
+import plusIcon from "../../assets/icon-plus.svg";
 // Import other avatar images as needed
 
 // Create an object to map usernames to their respective images
@@ -81,7 +83,11 @@ const CommentSection: React.FC = () => {
                 onKeyDown={(e) => handleKeyDown(e, comment.id, 1)}
                 aria-label="Increase score"
               >
-                +
+                {plusIcon ? (
+                  <img src={plusIcon} alt="Plus" />
+                ) : (
+                  <span aria-hidden="true">+</span>
+                )}
               </button>
               <span className="comment-section__score">{comment.score}</span>
               <button
@@ -90,9 +96,14 @@ const CommentSection: React.FC = () => {
                 onKeyDown={(e) => handleKeyDown(e, comment.id, -1)}
                 aria-label="Decrease score"
               >
-                -
+                {minusIcon ? (
+                  <img src={minusIcon} alt="Minus" />
+                ) : (
+                  <span aria-hidden="true">-</span>
+                )}
               </button>
             </div>
+
             <button className="comment-section__reply-btn">
               <img src={replyIcon} alt="Reply" />
               Reply
